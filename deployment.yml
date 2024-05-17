@@ -13,7 +13,7 @@ spec:
         app: my-gagan
     spec:
       containers:
-      - name: my-image
-        image: gagandeepthinknyx/intel1:latest
+      - name: my-container
+        image: gagandeepgawri/intel5:latest
         ports:
         - containerPort: 8080
