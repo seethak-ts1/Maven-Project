@@ -60,6 +60,8 @@ jobs:
     runs-on: self-hosted
     needs: test
     steps:
+      - name: clone the repository
+        uses: actions/checkout@v4.1.5
       - name: Deploy the App in Kubernetes environment
         run: |
           kubectl apply -f deployment.yml
