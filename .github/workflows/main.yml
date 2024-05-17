@@ -55,5 +55,12 @@ jobs:
       - name: Docker container creation test
         run: |
           docker run -dt --name web1 gagandeepgawri/intel5:latest
-          docker ps
-    
+          docker ps   
+  deploy:
+    runs-on: self-hosted
+    needs: test
+    steps:
+      - name: Deploy the App in Kubernetes environment
+        run: |
+          kubectl apply -f deployment.yml
+          kubectl get pods
